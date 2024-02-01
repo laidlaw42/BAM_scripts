@@ -19,11 +19,11 @@ import requests
 import json
 import os
 
-def save_dataset(data, filename='dataset.json'):
+def save_dataset(data, filename='dataset_benchmarks.json'):
     with open(filename, 'w') as file:
         json.dump(data, file)
 
-def load_dataset(filename='dataset.json'):
+def load_dataset(filename='dataset_benchmarks.json'):
     if os.path.exists(filename):
         with open(filename, 'r') as file:
             return json.load(file)
@@ -44,7 +44,7 @@ def get_info_by_pctid(data, target_pctid):
 
 # Example usage
 base_url = 'https://data.bionet.nsw.gov.au/biosvcapp/odata/'
-entity_set = 'VegetationClassification_PCTDefinition'
+entity_set = 'VegetationClassification_PCTBenchmarks'
 metadata_url = f'{base_url}$metadata'
 
 try:
@@ -64,7 +64,7 @@ try:
 
     # Compare current and stored datasets
     if current_data != stored_data:
-        print("Dataset has been updated. Saving the new dataset.")
+        print("Benchmark dataset has been updated. Saving the new dataset.")
         save_dataset(current_data)
     else:
         print("No changes detected in the dataset.")
