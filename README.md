@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Python script interacts with the NSW Bionet API to retrieve datasets related to vegetation classifications. It specifically targets the PCT Definition, Growth Form Group, and PCT Benchmarks entity sets from [BioNet](https://data.bionet.nsw.gov.au/biosvcapp/odata)
+This Python script interacts with the NSW Bionet API to retrieve datasets related to vegetation classifications. It specifically targets the PCT Definition, Growth Form Group, and PCT Benchmarks entity sets from [BioNet](https://data.bionet.nsw.gov.au/biosvcapp/odata).
 
 ## Functionality
 
