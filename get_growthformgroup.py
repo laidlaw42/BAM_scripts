@@ -1,15 +1,19 @@
 """
-This Python script interacts with the NSW Bionet API to retrieve information about vegetation classifications. It follows these steps:
+This Python script interacts with the NSW Bionet API to retrieve information about vegetation classifications. 
+It follows these steps:
 
 1. Fetches the metadata to identify the available datasets and their structure.
-2. Requests the actual dataset (JSON format) from the specified entity set, in this case, 'VegetationClassification_PCTDefinition'.
+2. Requests the actual dataset (JSON format) from the specified entity set, in this case, 
+   'VegetationClassification_PCTDefinition'.
 3. Compares the current dataset with the previously stored dataset (if available).
 4. If changes are detected, it updates the stored dataset with the current one.
 5. Prompts the user to enter a target PCTID and displays detailed information if found.
 
 Functions:
-- save_dataset(data, filename='dataset.json'): Saves the provided dataset to a JSON file (default filename: 'dataset.json').
-- load_dataset(filename='dataset.json'): Loads the dataset from a JSON file (default filename: 'dataset.json').
+- save_dataset(data, filename='dataset_growth_form.json'): Saves the provided dataset to a JSON file 
+  (default filename: 'dataset_growth_form.json').
+- load_dataset(filename='dataset_growth_form.json'): Loads the dataset from a JSON file 
+  (default filename: 'dataset_growth_form.json').
 - get_info_by_pctid(data, target_pctid): Retrieves and prints information for a specified PCTID from the given dataset.
 
 Note: Ensure you have the 'requests' library installed (you can install it using 'pip install requests').
@@ -19,15 +23,18 @@ import requests
 import json
 import os
 
-def save_dataset(data, filename='dataset_benchmarks.json'):
+
+def save_dataset(data, filename='dataset_growth_form.json'):
     with open(filename, 'w') as file:
         json.dump(data, file)
 
-def load_dataset(filename='dataset_benchmarks.json'):
+
+def load_dataset(filename='dataset_growth_form.json'):
     if os.path.exists(filename):
         with open(filename, 'r') as file:
             return json.load(file)
     return []
+
 
 def get_info_by_pctid(data, target_pctid):
     for entity in data:
@@ -42,9 +49,10 @@ def get_info_by_pctid(data, target_pctid):
     else:
         print(f"No information found for PCTID {target_pctid}")
 
+
 # Example usage
 base_url = 'https://data.bionet.nsw.gov.au/biosvcapp/odata/'
-entity_set = 'VegetationClassification_PCTBenchmarks'
+entity_set = 'VegetationClassification_PCTGrowthForm'
 metadata_url = f'{base_url}$metadata'
 
 try:
