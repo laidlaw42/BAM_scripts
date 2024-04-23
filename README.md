@@ -8,7 +8,7 @@ Simple scripts that interact with the NSW Bionet API to retrieve datasets relate
 
 The script performs the following tasks:
 
-1. **API Interaction**: It sends an HTTP GET request to the NSW Bionet API to fetch datasets associated e.g.  "VegetationClassification_PCTGrowthForm".
+1. **API Interaction**: Sends an HTTP GET request to the NSW Bionet API to fetch a specified dataset e.g.  "VegetationClassification_PCTGrowthForm".
 
 3. **Data Retrieval & Storage**: Upon receiving the response, the script extracts and stores the content as a JSON. 
 
